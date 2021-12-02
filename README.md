@@ -1,4 +1,4 @@
-# java-streams-learning
+# Java Streams - learning
 learning materials for functional Java
 
 for Java 8 and above
