@@ -12,12 +12,12 @@ public class ImperativeVsFunctional_01 {
                 "the", "functional", "one");
 
         // two approaches - the first is imperative, the second one is declarative
-        declarativeApproach(words);
+        imperativeApproach(words);
         functionalApproach(words);
     }
 
     // verbose... at first glance, it is not obvious what the code is doing
-    public static void declarativeApproach(List<String> words) {
+    public static void imperativeApproach(List<String> words) {
         Map<Integer, List<String>> wordsByLen = new HashMap<>();
 
         for (String word: words) {
