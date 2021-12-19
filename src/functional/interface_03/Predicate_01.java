@@ -3,6 +3,7 @@ package functional.interface_03;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.IntPredicate;
 import java.util.function.Predicate;
 
 public class Predicate_01 {
@@ -20,6 +21,10 @@ public class Predicate_01 {
         // default method → method is implemented straight inside interface
         Predicate<Integer> lessThanTenAndOdd = numberLessThanTen.and(numberIsEven);
         getNumbersFilteredBy(numberList, lessThanTenAndOdd); // []
+
+        // other predicate interface:
+        // predicate interfaces for primitive types → IntPredicate, LongPredicate, DoublePredicate
+        // predicate accepting 2 arguments → BiPredicate
     }
 
     public static List<Integer> getNumbersFilteredBy(List<Integer> numbers, Predicate<Integer> filter) {
