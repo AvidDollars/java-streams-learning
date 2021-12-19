@@ -33,6 +33,10 @@ public class Consumer_03 {
         List<Integer> numList = List.of(1, 2, 3, 4, 5);
         applyConsumerOnListElements(numList, num -> System.out.println(num * num));
         numList.forEach(System.out::print);
+
+        // other Consumer interfaces:
+        //      for primitives: IntConsumer, LongConsumer, DoubleConsumer
+        //      accepts 2 arguments: BiConsumer
     }
 
     static void printString(String string, Consumer<String> displayOutput) {
