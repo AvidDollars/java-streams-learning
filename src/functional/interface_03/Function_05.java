@@ -2,8 +2,7 @@ package functional.interface_03;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Function;
-import java.util.function.ToIntFunction;
+import java.util.function.*;
 
 public class Function_05 {
     public static void main(String[] args) {
@@ -37,6 +36,16 @@ public class Function_05 {
         List<Integer> numberList = List.of(5, 2, 7, 12, 5, 9, 4, 1, 52, 7, 2, 8);
         ToIntFunction<List<Integer>> findMax = Function_05::maxValueInList;
         findMax.applyAsInt(numberList); // 52
+
+        // other function interfaces:
+        //      accepts primitives as argument:
+        //          - IntFunction, LongFunction, DoubleFunction
+        //      accepts 2 arguments:
+        //          - BiFunction
+        //      accepts 2 arguments and returns primitive value:
+        //          - ToIntBiFunction, ToLongBiFunction, ToDoubleBiFunction
+        //      transformations between primitives:
+        //          - IntToDoubleFunction, LongToIntFunction, DoubleToLongFunction ... etc.
     }
 
     static int maxValueInList(List<Integer> list) {
