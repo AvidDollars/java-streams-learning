@@ -2,6 +2,7 @@ package functional.interface_03;
 
 import java.util.List;
 import java.util.Random;
+import java.util.function.BooleanSupplier;
 import java.util.function.IntSupplier;
 import java.util.function.Supplier;
 
@@ -18,6 +19,8 @@ public class Supplier_02 {
         IntSupplier randomInt = () -> (int)(Math.random() * 10);
         randomInt.getAsInt(); // primitive type is not boxed, more optimized approach
 
+        // other interfaces for primitive types:
+        // LongSupplier, DoubleSupplier, BooleanSupplier
 
         // eg.: returning random element from list
         List<Integer> integerList = List.of(7, 13, 23, 42, 69, 420, 666);
