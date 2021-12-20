@@ -6,6 +6,10 @@ import java.util.stream.Collectors;
 
 public class Introduction_01 {
     public static void main(String[] args) {
+        // streams are lazy:
+        //      if terminal operation is not invoked ('collect' method),
+        //      no data processing will occur, just stream pipeline will be defined
+
         List<Integer> listOfInts = List.of(1, 2, 7, 12, 5, 4, 50, 49, 72, 88, 51);
         Predicate<Integer> oddNumbers = num -> num % 2 == 1;
 
