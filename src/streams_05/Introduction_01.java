@@ -14,9 +14,18 @@ public class Introduction_01 {
     }
 
     static List<Integer> getNumbersFilteredBy(List<Integer> list, Predicate<Integer> filter) {
-        // pipeline of function calls
+        // 'stream' method lives in Collection interface
+        // 'stream()' returns Stream interface object which has a few methods:
+        //      e.g. filter / map / mapToInt / flatMap / sorted / limit / takeWhile ...
+        //      all of them return Stream object when called
+
+
+        // stream = data pipe
         return list.stream() // .stream() is responsible for iteration
                 .filter(filter)
-                .collect(Collectors.toList()); // result of iteration with a filter is placed into list
+                // stream does not have its own storage
+                // the result of stream has to be collected to some data structure
+                // e.g. to a list:
+                .collect(Collectors.toList());
     }
 }
