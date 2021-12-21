@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 
 public class Optional_01 {
     public static void main(String[] args) {
@@ -17,8 +16,7 @@ public class Optional_01 {
         // argument passed to 'of' method can not be null
         Optional<String> name = Optional.of(personName);
 
-        // getting value
-        name.get();
+        name.get(); // getting value
         name.isEmpty(); // if value == null
         name.isPresent(); // if value != null
 
