@@ -30,8 +30,13 @@ public class Introduction_01 {
         // e.g. sum length of all words but don't include empty spaces
         int characterCount = wordsList.stream()
                 .map(removeEmptySpaces)
+                // returns IntStream → stream for primitive ints
                 .mapToInt(String::length)
-                .sum(); // defined in 'IntStream' interface
+                .sum(); // defined in 'IntStream' interface (because of invocation of 'mapToInt')
+
+                // IntStream mapToInt(ToIntFunction<? super T> mapper) → primitive specialization of Stream
+                // other → mapToLong / mapToDouble
+                // reason to use: auto-boxing is costly operation
 
         // characterCount; → 20
     }
