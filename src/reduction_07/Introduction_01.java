@@ -1,6 +1,8 @@
 package reduction_07;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.function.Function;
 
 public class Introduction_01 {
     public static void main(String[] args) {
@@ -17,5 +19,20 @@ public class Introduction_01 {
                 .reduce(0, Integer::sum); // or .sum()
 
         // sum; → 55
+
+        List<String> wordsList = Arrays.asList(
+                "Hello", "  this  ", "is",
+                "some  ", "  words"
+        );
+
+        Function<String, String> removeEmptySpaces = string -> string.replace(" ", "");
+
+        // e.g. sum length of all words but don't include empty spaces
+        int characterCount = wordsList.stream()
+                .map(removeEmptySpaces)
+                .mapToInt(String::length)
+                .sum(); // defined in 'IntStream' interface
+
+        // characterCount; → 20
     }
 }
