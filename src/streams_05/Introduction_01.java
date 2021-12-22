@@ -9,6 +9,12 @@ public class Introduction_01 {
         // streams are lazy:
         //      if terminal operation is not invoked ('collect' method),
         //      no data processing will occur, just stream pipeline will be defined
+        //
+        // Stream            vs.      Collection
+        // -------------------------------------------
+        // no storage         |       are containers
+        // can be infinite    |       finite size
+        // lazy evaluation    |       eager evaluation
 
         List<Integer> listOfInts = List.of(1, 2, 7, 12, 5, 4, 50, 49, 72, 88, 51);
         Predicate<Integer> oddNumbers = num -> num % 2 == 1;
