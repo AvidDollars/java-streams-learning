@@ -10,6 +10,7 @@ public class Optional_01 {
         // 'Optional' class → introduced in Java 8
         // Optional<T> → behaves like container object
         // when used appropriately indicates the absence of a value
+        // avoid using it in Collections (e.g. List<Optional<T>>)
 
         String personName = "Peter";
 
