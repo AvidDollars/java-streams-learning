@@ -16,7 +16,7 @@ public class Grouping_01 {
                 "picked", "words", "to", "play", "with"
         );
 
-        // grouping base on length of a string
+        // grouping based on length of a string
         Map<Integer, List<String>> lengthGroups = numberList.stream()
                 .collect(Collectors.groupingBy(String::length));
 
