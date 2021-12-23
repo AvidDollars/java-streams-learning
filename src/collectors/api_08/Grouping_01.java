@@ -33,7 +33,7 @@ public class Grouping_01 {
         // ageFractions; →{middle=[Person{name='Nick', age=22, gender=MALE}, ... }
     }
 
-    static String getAgeGroup(Person person) {
+    public static String getAgeGroup(Person person) {
         return (person.getAge() < 20)
                 ? "young"
                 : (person.getAge() > 60)
