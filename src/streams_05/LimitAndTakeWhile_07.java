@@ -29,6 +29,7 @@ public class LimitAndTakeWhile_07 {
         // example; → [1, 2, 3, 4, 5, 6]
 
         // both takeWhile and limit
+        // 'dropWhile' → discards the elements until the condition is evaluated to be true
         List<Integer> exampleBoth = numberList.stream()
                 // iterates until the takeWhile predicate is evaluated to false
                 // or maxSize in limit is not reached
