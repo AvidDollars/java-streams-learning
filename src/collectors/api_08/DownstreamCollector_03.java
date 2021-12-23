@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 
 public class DownstreamCollector_03 {
     public static void main(String[] args) {
-        List<Person> listOfPersons = Person.getPeople();
+        List<Person> listOfPersons = getPeople();
 
         Map<Gender, Integer> sumAgeForGenders = listOfPersons.stream()
                 .collect(Collectors.groupingBy(
@@ -17,6 +17,21 @@ public class DownstreamCollector_03 {
                 ));
 
         // sumAgeForGenders; → {MALE=96, FEMALE=135}
+    }
+
+    public static List<Person> getPeople() {
+        return Arrays.asList(
+                new Person("Nick", 22, Gender.MALE),
+                new Person("Jack", 12, Gender.MALE),
+                new Person("Nicki", 18, Gender.FEMALE),
+                new Person("Elisa", 55, Gender.FEMALE),
+                new Person("Jimi", 20, Gender.MALE),
+                new Person("Peter", 18, Gender.MALE),
+                new Person("Robert", 10, Gender.MALE),
+                new Person("Donald", 14, Gender.MALE),
+                new Person("Emily", 32, Gender.FEMALE),
+                new Person("Sara", 30, Gender.FEMALE)
+        );
     }
 }
 
@@ -46,21 +61,6 @@ class Person {
                 ", age=" + age +
                 ", gender=" + gender +
                 '}';
-    }
-
-    static List<Person> getPeople() {
-        return Arrays.asList(
-                new Person("Nick", 22, Gender.MALE),
-                new Person("Jack", 12, Gender.MALE),
-                new Person("Nicki", 18, Gender.FEMALE),
-                new Person("Elisa", 55, Gender.FEMALE),
-                new Person("Jimi", 20, Gender.MALE),
-                new Person("Peter", 18, Gender.MALE),
-                new Person("Robert", 10, Gender.MALE),
-                new Person("Donald", 14, Gender.MALE),
-                new Person("Emily", 32, Gender.FEMALE),
-                new Person("Sara", 30, Gender.FEMALE)
-        );
     }
 }
 
