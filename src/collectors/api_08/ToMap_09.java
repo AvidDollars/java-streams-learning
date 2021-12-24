@@ -1,9 +1,9 @@
-package examples_11;
+package collectors.api_08;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ToMap_03 {
+public class ToMap_09 {
     public static void main(String[] args) {
         // take list of people and take it to a HashMap (key = id, value = List.of(name, age))
         var people = getPeople();
@@ -11,32 +11,32 @@ public class ToMap_03 {
         var peopleById = people.stream()
                 .filter(person -> person.getAge() > 18)
                 .collect(Collectors.toMap(
-                        Person::getId, // key mapper
+                        PersonId::getId, // key mapper
                         person -> List.of(person.getName(), person.getAge()) // value mapper
                 ));
         // peopleById; → {1=[Nick, 22], 3=[Emily, 20], 4=[Suzanne, 25], ...}
     }
 
-    static List<Person> getPeople() {
+    static List<PersonId> getPeople() {
         return List.of(
-                new Person("Nick", 22, 1),
-                new Person("Jack", 15, 2),
-                new Person("Emily", 20, 3),
-                new Person("Suzanne", 25, 4),
-                new Person("Jimi", 22, 5),
-                new Person("Margaret", 20, 6),
-                new Person("Paul", 15, 7),
-                new Person("Jordan", 18, 8)
+                new PersonId("Nick", 22, 1),
+                new PersonId("Jack", 15, 2),
+                new PersonId("Emily", 20, 3),
+                new PersonId("Suzanne", 25, 4),
+                new PersonId("Jimi", 22, 5),
+                new PersonId("Margaret", 20, 6),
+                new PersonId("Paul", 15, 7),
+                new PersonId("Jordan", 18, 8)
         );
     }
 }
 
-class Person {
+class PersonId {
     private String name;
     private int age;
     private int id;
 
-    public Person(String name, int age, int id) {
+    public PersonId(String name, int age, int id) {
         this.name = name;
         this.age = age;
         this.id = id;
