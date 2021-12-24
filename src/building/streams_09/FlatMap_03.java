@@ -10,8 +10,18 @@ import java.util.stream.Stream;
 
 public class FlatMap_03 {
     public static void main(String[] args) {
-        // flatMap → to flatten nested structure
+        // flatMap:
+        //      maps one element to multiple elements → one-to-many mapping
+        //      to flatten nested structure (= map() + flattening)
+        //
         // <R> Stream<R> flatMap(Function<T, Stream<R>> mapper)
+
+        // e.g.:
+        var list = List.of(1, 2, 3);
+        var newList = list.stream()
+                .flatMap(number -> Stream.of(number * 10, number * 100))
+                .collect(Collectors.toList());
+        // newList; → [10, 100, 20, 200, 30, 300]
 
         int[][] nestedNumbers = {
                 {1, 2, 3},
