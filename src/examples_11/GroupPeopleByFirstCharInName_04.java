@@ -11,5 +11,10 @@ public class GroupPeopleByFirstCharInName_04 {
                 .getPersonStreamSample()
                 .collect(Collectors.groupingBy(firstCharacter));
         // groupedPeople → {P=[Person{name='Paula', age=32}, Person{name='Paul'...
+
+        int totalAge = Person.getPersonStreamSample()
+                .map(Person::getAge)
+                .reduce(0, Integer::sum);
+        System.out.println(totalAge);
     }
 }
